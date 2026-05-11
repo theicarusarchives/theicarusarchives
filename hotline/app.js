@@ -41,7 +41,7 @@ function applySunDecay() {
 
   if (!title) return;
 
-  const baseText = "TELL ME HOW THE SUN CHANGED YOU";
+  const baseText = "TELL ME ABOUT WHEN YOU FLEW TOO CLOSE TO THE SUN";
 
   let corrupted = baseText.split("");
 
