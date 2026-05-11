@@ -1,0 +1,287 @@
+body {
+  background: black;
+  color: #eaeaea;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* subtle VHS noise flicker */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255,255,255,0.03),
+    rgba(255,255,255,0.03) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.05; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0.05; }
+}
+
+.container {
+  max-width: 520px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 16px 22px;
+  margin: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+#status {
+  margin-top: 20px;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+#rebirths {
+  margin-top: 15px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitchBottom 1.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); transform: translate(0); }
+  20% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, -1px); }
+  40% { clip-path: inset(30% 0 40% 0); transform: translate(2px, 1px); }
+  60% { clip-path: inset(50% 0 20% 0); transform: translate(-1px, 2px); }
+  100% { clip-path: inset(0 0 80% 0); transform: translate(0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); transform: translate(0); }
+  25% { clip-path: inset(60% 0 10% 0); transform: translate(2px, 1px); }
+  50% { clip-path: inset(40% 0 30% 0); transform: translate(-2px, -1px); }
+  75% { clip-path: inset(20% 0 50% 0); transform: translate(1px, -2px); }
+  100% { clip-path: inset(80% 0 0 0); transform: translate(0); }
+}
+
+.sun-title {
+  font-size: 40px;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: center;
+
+  /* futuristic + wide */
+  font-family: "Arial Black", Impact, "Helvetica Neue", sans-serif;
+
+  color: #f2f2f2;
+  position: relative;
+  margin-bottom: 40px;
+
+}
+
+@keyframes crackle {
+  0% { opacity: 0.9; transform: translate(0px, 0px); }
+  2% { opacity: 0.6; transform: translate(1px, -1px); }
+  4% { opacity: 1; transform: translate(0px, 0px); }
+}
+
+.sun-title {
+  animation: crackle 4s infinite;
+}
+
+.sun-orb {
+  width: 10px;
+  height: 10px;
+  background: #ffd36b;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  opacity: 0.6;
+  box-shadow: 0 0 12px 4px rgba(255, 200, 80, 0.6);
+  transition: 0.3s;
+}
+
+/* when recording */
+.recording .sun-orb {
+  opacity: 1;
+  box-shadow: 0 0 25px 10px rgba(255, 180, 60, 0.9);
+  transition: all 1s ease;
+}
+
+@keyframes sunPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.6); }
+  100% { transform: scale(1); }
+}
+.sun-title::before,
+.sun-title::after {
+  content: "TELL ME ABOUT WHEN YOU FLEW TOO CLOSE TO THE SUN";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.glitch-on::before {
+  animation: glitchRed 0.2s linear;
+  color: red;
+  opacity: 0.8;
+  transform: translate(-2px, 0);
+}
+
+.glitch-on::after {
+  animation: glitchBlue 0.2s linear;
+  color: cyan;
+  opacity: 0.8;
+  transform: translate(2px, 0);
+}
+
+@keyframes glitchRed {
+  0% { clip-path: inset(0 0 60% 0); }
+  50% { clip-path: inset(30% 0 30% 0); }
+  100% { clip-path: inset(0 0 60% 0); }
+}
+
+@keyframes glitchBlue {
+  0% { clip-path: inset(40% 0 20% 0); }
+  50% { clip-path: inset(10% 0 50% 0); }
+  100% { clip-path: inset(40% 0 20% 0); }
+}
+
+body {
+  cursor: none;
+}
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+
+  background: radial-gradient(circle, rgba(255, 220, 140, 1), rgba(255, 180, 80, 0.2));
+  box-shadow: 0 0 10px rgba(255, 200, 120, 0.8);
+
+  transform: translate(-50%, -50%);
+}
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+body {
+  background: #000000 !important;
+}
+.recording .sun-orb {
+  transform: scale(2);
+  box-shadow: 0 0 35px 15px rgba(255, 200, 80, 0.95);
+  opacity: 1;
+}
+/* ---------------- MOBILE IMPROVEMENTS ---------------- */
+
+@media (max-width: 768px) {
+
+  body {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .sun-title {
+    font-size: 24px;
+    letter-spacing: 3px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    word-break: break-word;
+  }
+
+  button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 16px;
+    padding: 16px;
+  }
+
+  #rebirths,
+  #status {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .sun-orb {
+    margin-bottom: 30px;
+  }
+}
