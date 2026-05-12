@@ -1,3 +1,4 @@
+let cooldown = false;
 let mediaRecorder;
 let audioChunks = [];
 
@@ -86,7 +87,9 @@ if (!check.allowed) {
 
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
 
-  mediaRecorder = new MediaRecorder(stream);
+  mediaRecorder = new MediaRecorder(stream, {
+  mimeType: "audio/webm;codecs=opus"
+});
   audioChunks = [];
 
   mediaRecorder.ondataavailable = e => {
