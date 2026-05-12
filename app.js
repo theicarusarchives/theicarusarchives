@@ -97,10 +97,10 @@ if (!check.allowed) {
 
     statusText.innerText = "SENDING TO THE ARCHIVE...";
 
-    const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+    new Blob(audioChunks, { type: "audio/webm;codecs=opus" })
 
     const formData = new FormData();
-    formData.append("file", audioBlob, "message.webm");
+    formData.append("file", audioBlob, "voice.webm");
     formData.append("content", "A voice returned to the archive");
 
     await fetch(
