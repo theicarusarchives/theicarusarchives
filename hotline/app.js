@@ -103,13 +103,10 @@ if (!check.allowed) {
     formData.append("file", audioBlob, "voice.webm");
     formData.append("content", "A voice returned to the archive");
 
-    await fetch(
-      "https://discord.com/api/webhooks/1503392023250735104/SBZ4pxroQceHwvfQQ4yit8K8JFqX5d0tTdTZ7v8c_wT0prULE4pm98H4g1UCDsvvd5sB",
-      {
-        method: "POST",
-        body: formData
-      }
-    );
+  await fetch("https://bitter-tooth-0c20.theicarusarchives.workers.dev/", {
+  method: "POST",
+  body: formData
+});
 
     statusText.innerText = "SENT";
 lastSendTime = Date.now();
