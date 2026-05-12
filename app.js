@@ -98,6 +98,33 @@ if (!check.allowed) {
 
   mediaRecorder.onstop = async () => {
 
+  // 1. turn recording into a file
+  const audioBlob = new Blob(audioChunks, { type: "audio/webm;codecs=opus" });
+
+  // 2. MAKE A PLAY BUTTON APPEAR
+  const preview = document.getElementById("preview");
+  const audioURL = URL.createObjectURL(audioBlob);
+
+  preview.src = audioURL;
+  preview.style.display = "block";
+
+  // 3. PLAY IT AUTOMATICALLY
+  preview.play();
+
+  statusText.innerText = "LISTENING TO YOUR RECORDING...";
+
+  // 4. SEND TO DISCORD (same as before)
+  const formData = new FormData();
+  formData.append("file", audioBlob, "voice.webm");
+
+  await fetch("https://discord.com/api/webhooks/YOUR_WEBHOOK", {
+    method: "POST",
+    body: formData
+  });
+
+  statusText.innerText = "SENT TO DISCORD";
+};
+
     statusText.innerText = "SENDING TO THE ARCHIVE...";
 
     new Blob(audioChunks, { type: "audio/webm;codecs=opus" })
