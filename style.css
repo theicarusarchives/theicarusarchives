@@ -285,3 +285,32 @@ body {
     margin-bottom: 30px;
   }
 }
+/* Countdown Timer */
+
+.countdown-container {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.countdown-timer {
+  color: white;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+
+  text-shadow:
+    0 0 4px rgba(255, 220, 120, 0.35),
+    0 0 8px rgba(255, 220, 120, 0.15);
+}
+
+.countdown-subtext {
+  margin-top: 6px;
+
+  color: rgba(255,255,255,0.55);
+
+  font-family: "Courier New", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
