@@ -211,7 +211,9 @@ function draw() {
 
 draw();
 }
-
+                   
+});
+                  
 // Countdown to 20 June 2026, 6PM UK time
 
 const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
