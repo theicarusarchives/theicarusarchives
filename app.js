@@ -148,7 +148,9 @@ window.addEventListener("load", () => {
 });
 function triggerGlitch() {
   const title = document.querySelector(".sun-title");
-  if (!title) return;
+  if (!canvas) {
+  console.log("No starfield canvas found");
+} else {
 
   title.classList.add("glitch-on");
 
