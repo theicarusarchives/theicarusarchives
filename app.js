@@ -236,5 +236,3 @@ function draw() {
 }
 
 draw();
-                   
-});
