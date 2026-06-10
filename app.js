@@ -1,3 +1,4 @@
+window.addEventListener("DOMContentLoaded", () => {
 let mediaRecorder;
 let audioChunks = [];
 
@@ -169,8 +170,64 @@ setInterval(() => {
 }, 3000 + Math.random() * 2000);
 
 window.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.getElementById("starfield");
+const canvas = document.getElementById("starfield");
+
+if (canvas) {
   const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let mouseX = canvas.width / 2;
+  let mouseY = canvas.height / 2;
+
+  const particles = [];
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    for (let i = 0; i < 1; i++) {
+      particles.push({
+        x: mouseX,
+        y: mouseY,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        alpha: 1,
+        size: Math.random() * 1 + 0.3
+      });
+    }
+  });
+
+  function draw() {
+    ctx.globalCompositeOperation = "source-over";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < particles.length; i++) {
+      const p = particles[i];
+
+      p.x += p.vx;
+      p.y += p.vy;
+      p.alpha -= 0.008;
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(255, 200, 120, ${p.alpha})`;
+      ctx.shadowColor = "rgba(255, 220, 140, 0.5)";
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (p.alpha <= 0) {
+        particles.splice(i, 1);
+        i--;
+      }
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  draw();
+}
 
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -256,3 +313,4 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+});
