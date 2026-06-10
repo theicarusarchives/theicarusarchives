@@ -235,3 +235,5 @@ function updateCountdown() {
      MINUTES: <span class="timer-number">${minutes}</span>
      SECONDS: <span class="timer-number">${seconds}</span>`;
 }
+
+});
