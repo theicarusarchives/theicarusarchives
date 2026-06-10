@@ -37,8 +37,8 @@ function updateRebirthDisplay() {
 }
 
 function applySunDecay() {
-  const title = document.querySelector(".glitch");
-
+  const title = document.querySelector(".sun-title");
+  
   if (!title) return;
 
   const baseText = "TELL ME HOW THE SUN CHANGED YOU";
@@ -247,8 +247,11 @@ function updateCountdown() {
   const minutes = Math.floor((difference / (1000 * 60)) % 60);
   const seconds = Math.floor((difference / 1000) % 60);
 
-  timer.innerText =
-    `DAYS: ${days} HOURS: ${hours} MINUTES: ${minutes} SECONDS: ${seconds}`;
+ timer.innerHTML =
+  `DAYS: <span class="timer-number">${days}</span>
+   HOURS: <span class="timer-number">${hours}</span>
+   MINUTES: <span class="timer-number">${minutes}</span>
+   SECONDS: <span class="timer-number">${seconds}</span>`;
 }
 
 updateCountdown();
