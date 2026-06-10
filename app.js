@@ -175,7 +175,7 @@ const canvas = document.getElementById("starfield");
 if (!canvas) return;
 
 const ctx = canvas.getContext("2d");
-
+ctx.shadowBlur = 0;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
