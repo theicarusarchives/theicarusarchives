@@ -307,3 +307,11 @@ text-shadow:
   letter-spacing: 2px;
   text-transform: uppercase;
 }
+
+.timer-number {
+  color: #ffbf73;
+
+  text-shadow:
+    0 0 4px rgba(255,191,115,0.7),
+    0 0 8px rgba(255,191,115,0.4);
+}
