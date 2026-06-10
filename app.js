@@ -157,8 +157,29 @@ function triggerGlitch() {
 setInterval(() => {
   triggerGlitch();
 }, 3000 + Math.random() * 2000);
+const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
 
-window.addEventListener("DOMContentLoaded", () => {
+function updateCountdown() {
+  const timer = document.getElementById("countdown-timer");
+  if (!timer) return;
+
+  const now = new Date();
+  const difference = countdownTarget - now;
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  timer.innerHTML =
+    `DAYS: <span class="timer-number">${days}</span>
+     HOURS: <span class="timer-number">${hours}</span>
+     MINUTES: <span class="timer-number">${minutes}</span>
+     SECONDS: <span class="timer-number">${seconds}</span>`;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
 const canvas = document.getElementById("starfield");
 if (!canvas) return;
 
@@ -214,28 +235,3 @@ draw();
                    
 });
                   
-// Countdown to 20 June 2026, 6PM UK time
-
-const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
-updateCountdown();
-setInterval(updateCountdown, 1000);
-function updateCountdown() {
-  const timer = document.getElementById("countdown-timer");
-  if (!timer) return;
-
-  const now = new Date();
-  const difference = countdownTarget - now;
-
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((difference / (1000 * 60)) % 60);
-  const seconds = Math.floor((difference / 1000) % 60);
-
-  timer.innerHTML =
-    `DAYS: <span class="timer-number">${days}</span>
-     HOURS: <span class="timer-number">${hours}</span>
-     MINUTES: <span class="timer-number">${minutes}</span>
-     SECONDS: <span class="timer-number">${seconds}</span>`;
-}
-
-});
