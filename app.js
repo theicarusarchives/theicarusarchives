@@ -1,6 +1,8 @@
 window.addEventListener("load", () => {
-  const canvas = document.getElementById("starfield");
-if (!canvas) return;
+const canvas = document.getElementById("starfield");
+if (!canvas) {
+  console.log("No canvas found");
+}
 
 const ctx = canvas.getContext("2d");
 ctx.shadowBlur = 0;
