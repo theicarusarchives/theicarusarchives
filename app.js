@@ -234,7 +234,5 @@ function draw() {
 }
 
 draw();
-}
                    
 });
-                  
