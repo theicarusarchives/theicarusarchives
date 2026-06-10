@@ -3,7 +3,6 @@ window.addEventListener("DOMContentLoaded", () => {
 let mediaRecorder;
 let audioChunks = [];
 
-let rebirthCount = parseInt(localStorage.getItem("rebirthCount") || "0");
 let decayLevel = parseInt(localStorage.getItem("decayLevel") || "0");
 
 function getCooldownMessage() {
@@ -32,11 +31,6 @@ function getCooldownMessage() {
   return { allowed: true };
 }
 
-const rebirthDisplay = document.getElementById("rebirths");
-
-function updateRebirthDisplay() {
-  rebirthDisplay.innerText = `${rebirthCount} rebirths recorded`;
-}
 
 function applySunDecay() {
   const title = document.querySelector(".sun-title");
@@ -61,8 +55,6 @@ function applySunDecay() {
 
   title.innerText = corrupted.join("");
 }
-
-updateRebirthDisplay();
 
 const recordBtn = document.getElementById("record");
 const stopBtn = document.getElementById("stop");
@@ -119,10 +111,6 @@ messageCount += 1;
 
 localStorage.setItem("lastSendTime", lastSendTime);
 localStorage.setItem("messageCount", messageCount);
-
-  rebirthCount += 1;
-  localStorage.setItem("rebirthCount", rebirthCount);
-  updateRebirthDisplay();
 
 decayLevel += 1;
 localStorage.setItem("decayLevel", decayLevel);
