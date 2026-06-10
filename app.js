@@ -59,8 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const baseText = "TELL ME HOW THE SUN CHANGED YOU";
     let corrupted = baseText.split("");
 
-    const chars = "!@#$%^&*~░▒▓█/\\|";
-
+    const chars = "!@$%^&*~░▒▓█/\\|";
     for (let i = 0; i < decayLevel; i++) {
       const index = Math.floor(Math.random() * corrupted.length);
       const randomChar = chars[Math.floor(Math.random() * chars.length)];
