@@ -116,10 +116,6 @@ messageCount += 1;
 localStorage.setItem("lastSendTime", lastSendTime);
 localStorage.setItem("messageCount", messageCount);
 
-  rebirthCount += 1;
-  localStorage.setItem("rebirthCount", rebirthCount);
-  updateRebirthDisplay();
-
 decayLevel += 1;
 localStorage.setItem("decayLevel", decayLevel);
 applySunDecay();
