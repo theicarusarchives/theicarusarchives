@@ -230,39 +230,6 @@ if (canvas) {
   draw();
 }
 
-   ctx.globalCompositeOperation = "source-over";
-   ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
-   ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    for (let i = 0; i < particles.length; i++) {
-      const p = particles[i];
-
-      p.x += p.vx;
-      p.y += p.vy;
-      p.alpha -= 0.008;
-
-      // sun glow particle
-      ctx.beginPath();
-      ctx.fillStyle = `rgba(255, 200, 120, ${p.alpha})`;
-      ctx.shadowColor = "rgba(255, 220, 140, 0.5)";
-      ctx.shadowBlur = Math.min(ctx.shadowBlur, 4);
-      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fill();
-
-      // remove faded particles
-      if (p.alpha <= 0) {
-        particles.splice(i, 1);
-        i--;
-      }
-    }
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-});
-
-
 // Countdown to 20 June 2026, 6PM UK time
 
 const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
