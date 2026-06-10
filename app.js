@@ -1,3 +1,54 @@
+const canvas = document.getElementById("starfield");
+if (!canvas) return;
+
+const ctx = canvas.getContext("2d");
+ctx.shadowBlur = 0;
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+
+document.addEventListener("mousemove", (e) => {
+  for (let i = 0; i < 1; i++) {
+    particles.push({
+      x: e.clientX,
+      y: e.clientY,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      alpha: 1,
+      size: Math.random() * 1 + 0.3
+    });
+  }
+});
+
+function draw() {
+  ctx.globalCompositeOperation = "source-over";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < particles.length; i++) {
+    const p = particles[i];
+
+    p.x += p.vx;
+    p.y += p.vy;
+    p.alpha -= 0.008;
+
+    ctx.beginPath();
+    ctx.fillStyle = `rgba(255, 200, 120, ${p.alpha})`;
+    ctx.shadowColor = "rgba(255, 220, 140, 0.5)";
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fill();
+
+    if (p.alpha <= 0) {
+      particles.splice(i, 1);
+      i--;
+    }
+  }
+
+  requestAnimationFrame(draw);
+}
+
+draw();
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -185,54 +236,3 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
-const canvas = document.getElementById("starfield");
-if (!canvas) return;
-
-const ctx = canvas.getContext("2d");
-ctx.shadowBlur = 0;
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const particles = [];
-
-document.addEventListener("mousemove", (e) => {
-  for (let i = 0; i < 1; i++) {
-    particles.push({
-      x: e.clientX,
-      y: e.clientY,
-      vx: (Math.random() - 0.5) * 0.4,
-      vy: (Math.random() - 0.5) * 0.4,
-      alpha: 1,
-      size: Math.random() * 1 + 0.3
-    });
-  }
-});
-
-function draw() {
-  ctx.globalCompositeOperation = "source-over";
-  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-  for (let i = 0; i < particles.length; i++) {
-    const p = particles[i];
-
-    p.x += p.vx;
-    p.y += p.vy;
-    p.alpha -= 0.008;
-
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(255, 200, 120, ${p.alpha})`;
-    ctx.shadowColor = "rgba(255, 220, 140, 0.5)";
-    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-    ctx.fill();
-
-    if (p.alpha <= 0) {
-      particles.splice(i, 1);
-      i--;
-    }
-  }
-
-  requestAnimationFrame(draw);
-}
-
-draw();
