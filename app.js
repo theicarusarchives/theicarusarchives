@@ -226,12 +226,10 @@ draw();
 
 // Countdown to 20 June 2026, 6PM UK time
 
-});
 const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
 
 function updateCountdown() {
   const timer = document.getElementById("countdown-timer");
-
   if (!timer) return;
 
   const now = new Date();
@@ -242,12 +240,14 @@ function updateCountdown() {
   const minutes = Math.floor((difference / (1000 * 60)) % 60);
   const seconds = Math.floor((difference / 1000) % 60);
 
- timer.innerHTML =
-  `DAYS: <span class="timer-number">${days}</span>
-   HOURS: <span class="timer-number">${hours}</span>
-   MINUTES: <span class="timer-number">${minutes}</span>
-   SECONDS: <span class="timer-number">${seconds}</span>`;
+  timer.innerHTML =
+    `DAYS: <span class="timer-number">${days}</span>
+     HOURS: <span class="timer-number">${hours}</span>
+     MINUTES: <span class="timer-number">${minutes}</span>
+     SECONDS: <span class="timer-number">${seconds}</span>`;
 }
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+window.addEventListener("DOMContentLoaded", () => {
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+});
