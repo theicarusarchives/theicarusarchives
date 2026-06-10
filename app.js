@@ -146,7 +146,7 @@ window.addEventListener("DOMContentLoaded", () => {
       formData.append("file", audioBlob, "message.webm");
       formData.append("content", "A voice returned to the archive");
 
-      await fetch("YOUR_WEBHOOK_URL_HERE", {
+      await fetch("https://discord.com/api/webhooks/1503392023250735104/SBZ4pxroQceHwvfQQ4yit8K8JFqX5d0tTdTZ7v8c_wT0prULE4pm98H4g1UCDsvvd5sB", {
         method: "POST",
         body: formData
       });
