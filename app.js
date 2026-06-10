@@ -57,6 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (!title) return;
 
     const baseText = "TELL ME HOW THE SUN CHANGED YOU";
+    title.innerText = baseText;
     let corrupted = baseText.split("");
 
     const chars = "!@$%^&*~░▒▓█/\\|";
