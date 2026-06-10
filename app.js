@@ -258,3 +258,4 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+document.querySelector(".countdown-timer").textContent = "HELLO FOXY";
