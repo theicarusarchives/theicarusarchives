@@ -1,4 +1,5 @@
 console.log("APP VERSION: 2026-06-10-TEST");
+
 window.addEventListener("DOMContentLoaded", () => {
   
 let mediaRecorder;
