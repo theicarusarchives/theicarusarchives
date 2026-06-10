@@ -196,7 +196,7 @@ document.addEventListener("mousemove", (e) => {
 
 function draw() {
   ctx.globalCompositeOperation = "source-over";
-  ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   for (let i = 0; i < particles.length; i++) {
