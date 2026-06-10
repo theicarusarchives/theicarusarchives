@@ -1,3 +1,5 @@
+window.addEventListener("load", () => {
+  const canvas = document.getElementById("starfield");
 const canvas = document.getElementById("starfield");
 if (!canvas) return;
 
