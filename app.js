@@ -1,6 +1,7 @@
-console.log("APP VERSION: 2026-06-10-TEST");
 
 window.addEventListener("DOMContentLoaded", () => {
+
+console.log("APP LOADED");
   
 let mediaRecorder;
 let audioChunks = [];
