@@ -1,4 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
+  
 let mediaRecorder;
 let audioChunks = [];
 
@@ -313,4 +314,5 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+  
 });
