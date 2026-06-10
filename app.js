@@ -227,7 +227,8 @@ draw();
 // Countdown to 20 June 2026, 6PM UK time
 
 const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
-
+updateCountdown();
+setInterval(updateCountdown, 1000);
 function updateCountdown() {
   const timer = document.getElementById("countdown-timer");
   if (!timer) return;
@@ -247,7 +248,3 @@ function updateCountdown() {
      SECONDS: <span class="timer-number">${seconds}</span>`;
 }
 
-window.addEventListener("DOMContentLoaded", () => {
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
-});
