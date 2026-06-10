@@ -148,6 +148,7 @@ button:hover {
 .sun-title {
   animation: crackle 4s infinite;
 }
+
 .sun-orb {
   width: 10px;
   height: 10px;
@@ -158,12 +159,14 @@ button:hover {
   box-shadow: 0 0 12px 4px rgba(255, 200, 80, 0.6);
   transition: 0.3s;
 }
+
 /* when recording */
 .recording .sun-orb {
   opacity: 1;
   box-shadow: 0 0 25px 10px rgba(255, 180, 60, 0.9);
   transition: all 1s ease;
 }
+
 @keyframes sunPulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.6); }
@@ -179,28 +182,33 @@ button:hover {
   overflow: hidden;
   opacity: 0;
 }
+
 .glitch-on::before {
   animation: glitchRed 0.2s linear;
   color: red;
   opacity: 0.8;
   transform: translate(-2px, 0);
 }
+
 .glitch-on::after {
   animation: glitchBlue 0.2s linear;
   color: cyan;
   opacity: 0.8;
   transform: translate(2px, 0);
 }
+
 @keyframes glitchRed {
   0% { clip-path: inset(0 0 60% 0); }
   50% { clip-path: inset(30% 0 30% 0); }
   100% { clip-path: inset(0 0 60% 0); }
 }
+
 @keyframes glitchBlue {
   0% { clip-path: inset(40% 0 20% 0); }
   50% { clip-path: inset(10% 0 50% 0); }
   100% { clip-path: inset(40% 0 20% 0); }
 }
+
 body {
   cursor: none;
 }
@@ -276,34 +284,4 @@ body {
   .sun-orb {
     margin-bottom: 30px;
   }
-}
-/* Countdown Timer */
-
-.countdown-container {
-  margin-top: 18px;
-  text-align: center;
-}
-
-.countdown-timer {
-  color: white;
-  font-family: "Courier New", monospace;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-
-text-shadow:
-  0 0 6px rgba(255, 220, 120, 0.8),
-  0 0 12px rgba(255, 220, 120, 0.35),
-  0 0 18px rgba(255, 220, 120, 0.15);
-}
-
-.countdown-subtext {
-  margin-top: 6px;
-
-  color: rgba(255,255,255,0.55);
-
-  font-family: "Courier New", monospace;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
 }
