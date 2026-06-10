@@ -226,6 +226,33 @@ window.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(draw);
   }
+// Countdown to 20 June 2026, 6PM UK time
 
+const countdownTarget = new Date("2026-06-20T18:00:00+01:00");
+
+function updateCountdown() {
+  const timer = document.querySelector(".countdown-timer");
+
+  if (!timer) return;
+
+  const now = new Date();
+  const difference = countdownTarget - now;
+
+  if (difference <= 0) {
+    timer.textContent = "RELEASED";
+    return;
+  }
+
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((difference / (1000 * 60)) % 60);
+  const seconds = Math.floor((difference / 1000) % 60);
+
+  timer.textContent =
+    `DAYS: ${String(days).padStart(2, "0")} HOURS: ${String(hours).padStart(2, "0")} MINUTES: ${String(minutes).padStart(2, "0")} SECONDS: ${String(seconds).padStart(2, "0")}`;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
   draw();
 });
