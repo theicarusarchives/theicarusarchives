@@ -199,6 +199,7 @@ stopBtn.onclick = () => {
 
 window.addEventListener("load", () => {
   applySunDecay();
+});
 
 function triggerGlitch() {
   const title = document.querySelector(".sun-title");
