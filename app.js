@@ -230,32 +230,6 @@ if (canvas) {
   draw();
 }
 
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  let mouseX = canvas.width / 2;
-  let mouseY = canvas.height / 2;
-
-  const particles = [];
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    // emit sun dust
-    for (let i = 0; i < 1; i++) {
-      particles.push({
-        x: mouseX,
-        y: mouseY,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        alpha: 1,
-        size: Math.random() * 1 + 0.3
-      });
-    }
-  });
-
-  function draw() {
    ctx.globalCompositeOperation = "source-over";
    ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
    ctx.fillRect(0, 0, canvas.width, canvas.height);
