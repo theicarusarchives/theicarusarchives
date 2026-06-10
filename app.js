@@ -50,25 +50,14 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   // ----------------------------
-  // SUN DECAY
+  // TITLE
   // ----------------------------
-  function applySunDecay() {
-    const title = document.querySelector(".sun-title");
-    if (!title) return;
+function applySunDecay() {
+  const title = document.querySelector(".sun-title");
+  if (!title) return;
 
-    const baseText = "TELL ME HOW THE SUN CHANGED YOU";
-    title.innerText = baseText;
-    let corrupted = baseText.split("");
-
-    const chars = "!@$%^&*~░▒▓█/\\|";
-    for (let i = 0; i < decayLevel; i++) {
-      const index = Math.floor(Math.random() * corrupted.length);
-      const randomChar = chars[Math.floor(Math.random() * chars.length)];
-      corrupted[index] = randomChar;
-    }
-
-    title.innerText = corrupted.join("");
-  }
+  title.innerText = "TELL ME ABOUT WHEN YOU FLEW TOO CLOSE TO THE SUN";
+}
 
   // ----------------------------
   // GLITCH
