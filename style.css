@@ -285,3 +285,10 @@ body {
     margin-bottom: 30px;
   }
 }
+
+.timer-number {
+  color: #ffcb8a;
+  text-shadow:
+    0 0 4px rgba(255, 203, 138, 0.7),
+    0 0 8px rgba(255, 203, 138, 0.4);
+}
