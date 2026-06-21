@@ -33,6 +33,7 @@ function getCooldownMessage() {
 const rebirthDisplay = document.getElementById("rebirths");
 
 function updateRebirthDisplay() {
+  if (!rebirthDisplay) return;
   rebirthDisplay.innerText = `${rebirthCount} rebirths recorded`;
 }
 
