@@ -292,3 +292,29 @@ body {
     0 0 4px rgba(255, 203, 138, 0.7),
     0 0 8px rgba(255, 203, 138, 0.4);
 }
+
+.sunkissed-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  border: 1px solid rgba(255, 190, 120, 0.55);
+  border-radius: 999px;
+  color: #f7ead9;
+  text-decoration: none;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(255, 190, 120, 0.08);
+  box-shadow:
+    0 0 6px rgba(255, 190, 120, 0.18),
+    0 0 12px rgba(255, 190, 120, 0.08);
+  transition: 0.2s ease;
+}
+
+.sunkissed-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 205, 150, 0.8);
+  box-shadow:
+    0 0 10px rgba(255, 190, 120, 0.28),
+    0 0 18px rgba(255, 190, 120, 0.14);
+}
