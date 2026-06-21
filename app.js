@@ -230,7 +230,7 @@ window.addEventListener("DOMContentLoaded", () => {
   draw();
 });
 
-const releaseDate = new Date("2026-07-04T00:00:00+01:00");
+const releaseDate = new Date("2026-07-4T18:00:00+01:00");
 
 function updateCountdown() {
   const timer = document.getElementById("countdown-timer");
