@@ -165,9 +165,6 @@ function triggerGlitch() {
   }, 200);
 }
 
-setInterval(() => {
-  triggerGlitch();
-}, 3000 + Math.random() * 2000);
 
 window.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("starfield");
@@ -199,9 +196,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   function draw() {
-   ctx.globalCompositeOperation = "source-over";
-   ctx.fillStyle = "rgba(0, 0, 0, 0.08)";
-   ctx.fillRect(0, 0, canvas.width, canvas.height);
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     for (let i = 0; i < particles.length; i++) {
       const p = particles[i];
