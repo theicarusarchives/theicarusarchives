@@ -428,3 +428,74 @@ button:hover {
   color: #59321f !important;
   opacity: 1 !important;
 }
+
+/* DREAMY PASTEL HEATMAP */
+html,
+body {
+  background-color: #fff0cf !important;
+  background-image:
+    radial-gradient(
+      ellipse at 50% 40%,
+      #fffbe1 0%,
+      rgba(255, 249, 213, 0.85) 18%,
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 12% 15%,
+      #ffc9a8 0%,
+      rgba(255, 201, 168, 0.7) 28%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 90% 20%,
+      #ffb9a9 0%,
+      rgba(255, 185, 169, 0.65) 30%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 90%,
+      #ffe19c 0%,
+      rgba(255, 225, 156, 0.7) 30%,
+      transparent 65%
+    ),
+    radial-gradient(
+      ellipse at 15% 85%,
+      #ffd5bb 0%,
+      rgba(255, 213, 187, 0.8) 30%,
+      transparent 60%
+    ),
+    linear-gradient(135deg, #ffe8ca, #fff0d0) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+/* Keep the background visible through the canvas */
+#starfield {
+  background: transparent !important;
+}
+
+/* COMPLETELY DISABLE TITLE GLITCH */
+.sun-title {
+  animation: none !important;
+  transform: none !important;
+}
+
+.sun-title::before,
+.sun-title::after {
+  content: none !important;
+  display: none !important;
+  animation: none !important;
+  text-shadow: none !important;
+}
+
+.sun-title.glitch-on {
+  animation: none !important;
+}
+
+.sun-title.glitch-on::before,
+.sun-title.glitch-on::after {
+  display: none !important;
+  content: none !important;
+}
+
