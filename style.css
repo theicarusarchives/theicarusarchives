@@ -292,3 +292,37 @@ body {
     0 0 4px rgba(255, 203, 138, 0.7),
     0 0 8px rgba(255, 203, 138, 0.4);
 }
+
+
+/* WARM AMBER HOME GLOW */
+body {
+  background:
+    radial-gradient(ellipse at 50% 40%,
+      rgba(255, 153, 51, 0.42) 0%,
+      rgba(180, 75, 20, 0.25) 35%,
+      rgba(45, 18, 10, 0.95) 75%,
+      #160b07 100%) !important;
+  color: #fff1dc;
+}
+
+.sun-title {
+  color: #fff0d6;
+  text-shadow:
+    0 0 8px rgba(255, 170, 70, 0.7),
+    0 0 24px rgba(255, 110, 20, 0.35);
+}
+
+button {
+  color: #fff1dc;
+  border-color: #e6a05a;
+}
+
+button:hover {
+  background: #e6a05a;
+  color: #241006;
+}
+
+.countdown-link {
+  color: #ffd19a;
+  text-shadow: 0 0 10px rgba(255, 150, 50, 0.6);
+}
