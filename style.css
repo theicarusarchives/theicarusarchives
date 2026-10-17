@@ -345,3 +345,58 @@ button:hover {
 .countdown-link {
   display: inline-block;
 }
+
+/* SOFT PASTEL SUNSHINE */
+html,
+body {
+  background: #ffe9c9 !important;
+  background-image: linear-gradient(
+    135deg,
+    #fff0d5 0%,
+    #ffdfc2 30%,
+    #fff0b8 65%,
+    #ffe4cf 100%
+  ) !important;
+  background-attachment: fixed !important;
+  min-height: 100vh;
+}
+
+/* Gentle, warm glow in the centre */
+body {
+  background-image:
+    radial-gradient(
+      ellipse at 50% 40%,
+      rgba(255, 248, 218, 0.95) 0%,
+      rgba(255, 231, 190, 0.35) 55%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      #fff0d5 0%,
+      #ffdfc2 35%,
+      #fff0b8 70%,
+      #ffe4cf 100%
+    ) !important;
+}
+
+/* Warm, soft text */
+.sun-title {
+  color: #a86442 !important;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Soft peach-gold buttons */
+button {
+  color: #a86442 !important;
+  border-color: #d9a77e !important;
+}
+
+button:hover {
+  background: #f5d5ad !important;
+  color: #79452f !important;
+}
+
+.countdown-link {
+  color: #a86442 !important;
+  text-shadow: none !important;
+}
