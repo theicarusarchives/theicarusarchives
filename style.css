@@ -499,3 +499,70 @@ body {
   content: none !important;
 }
 
+
+/* MOVING PASTEL HEATMAP */
+body {
+  background-color: #fff0d0 !important;
+  background-image:
+    radial-gradient(ellipse at center, #fff8d9 0%, transparent 65%),
+    linear-gradient(135deg, #ffe5cb, #fff0d0) !important;
+  background-size: 100% 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: -30%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(255, 174, 169, 0.8) 0%, transparent 35%),
+    radial-gradient(ellipse at 75% 25%, rgba(255, 208, 164, 0.85) 0%, transparent 35%),
+    radial-gradient(ellipse at 65% 75%, rgba(255, 225, 143, 0.9) 0%, transparent 38%),
+    radial-gradient(ellipse at 25% 80%, rgba(255, 195, 190, 0.7) 0%, transparent 35%),
+    radial-gradient(ellipse at 50% 50%, rgba(255, 246, 211, 0.9) 0%, transparent 45%);
+  filter: blur(35px);
+  animation: heatmapDrift 22s ease-in-out infinite alternate;
+}
+
+@keyframes heatmapDrift {
+  0% {
+    transform: translate(-3%, -2%) scale(1);
+  }
+  50% {
+    transform: translate(3%, 2%) scale(1.08);
+  }
+  100% {
+    transform: translate(-1%, 4%) scale(1.03);
+  }
+}
+
+/* SUNSET R&B TEXT PALETTE */
+.sun-title {
+  color: #c45e32 !important;
+  text-shadow: 0 0 18px rgba(255, 255, 255, 0.45) !important;
+}
+
+button {
+  color: #b9542d !important;
+  border-color: #d98b55 !important;
+  background: rgba(255, 249, 224, 0.45) !important;
+}
+
+button:hover {
+  background: #c45e32 !important;
+  color: #fff3d9 !important;
+}
+
+.countdown-link {
+  color: #b9542d !important;
+  text-shadow: none !important;
+  font-weight: bold;
+}
+
+#status {
+  color: #a94b29 !important;
+  opacity: 1 !important;
+}
