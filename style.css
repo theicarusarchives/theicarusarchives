@@ -326,3 +326,22 @@ button:hover {
   color: #ffd19a;
   text-shadow: 0 0 10px rgba(255, 150, 50, 0.6);
 }
+
+.recording-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.song-link-container {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.countdown-link {
+  display: inline-block;
+}
