@@ -165,13 +165,14 @@ function triggerGlitch() {
   }, 200);
 }
 
+window.addEventListener("DOMContentLoaded", () => {
+  const houseCursor = document.querySelector(".cursor-trail");
 
-const houseCursor = document.querySelector(".cursor-trail");
-
-document.addEventListener("mousemove", (e) => {
-  if (!houseCursor) return;
-  houseCursor.style.left = e.clientX + "px";
-  houseCursor.style.top = e.clientY + "px";
+  document.addEventListener("mousemove", (e) => {
+    if (!houseCursor) return;
+    houseCursor.style.left = e.clientX + "px";
+    houseCursor.style.top = e.clientY + "px";
+  });
 });
 
 window.addEventListener("DOMContentLoaded", () => {
