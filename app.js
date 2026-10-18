@@ -166,6 +166,14 @@ function triggerGlitch() {
 }
 
 
+const houseCursor = document.querySelector(".cursor-trail");
+
+document.addEventListener("mousemove", (e) => {
+  if (!houseCursor) return;
+  houseCursor.style.left = e.clientX + "px";
+  houseCursor.style.top = e.clientY + "px";
+});
+
 window.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("starfield");
   const ctx = canvas.getContext("2d");
