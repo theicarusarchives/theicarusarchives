@@ -643,3 +643,25 @@ body::after {
   background: transparent !important;
 }
 
+/* GOLDEN HOUSE CURSOR */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 24px;
+  line-height: 1;
+  z-index: 9999;
+  pointer-events: none;
+  transform: translate(-35%, -60%);
+  filter: drop-shadow(0 0 5px #ffcf70);
+}
+
+.cursor-trail::before {
+  content: "🏠";
+}
+
