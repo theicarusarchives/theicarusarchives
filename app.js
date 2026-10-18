@@ -181,7 +181,7 @@ window.addEventListener("DOMContentLoaded", () => {
       position: "fixed",
       left: e.clientX + (Math.random() * 16 - 8) + "px",
       top: e.clientY + (Math.random() * 16 - 8) + "px",
-      color: Math.random() > 0.5 ? "#ffd36b" : "#fff1bd",
+      color: Math.random() > 0.5 ? "#ffffff" : "#fff8d6",
       fontSize: (Math.random() * 10 + 8) + "px",
       pointerEvents: "none",
       zIndex: "9998",
