@@ -284,3 +284,44 @@ timer.innerHTML =
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+
+window.addEventListener("DOMContentLoaded", () => {
+  const messageBox = document.getElementById("visitor-message");
+  const sendButton = document.getElementById("send-message");
+  const messageStatus = document.getElementById("message-status");
+
+  if (!messageBox || !sendButton || !messageStatus) return;
+
+  sendButton.addEventListener("click", async () => {
+    const message = messageBox.value.trim();
+
+    if (!message) {
+      messageStatus.textContent = "Write a message first!";
+      return;
+    }
+
+    sendButton.disabled = true;
+    messageStatus.textContent = "Sending...";
+
+    try {
+      const response = await fetch(
+        "https://fragrant-breeze-8023.httpfoxy.workers.dev/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        }
+      );
+
+      if (!response.ok) throw new Error("Send failed");
+
+      messageStatus.textContent = "Message sent! ✦";
+      messageBox.value = "";
+    } catch (error) {
+      messageStatus.textContent = "Couldn't send. Please try again.";
+    } finally {
+      sendButton.disabled = false;
+    }
+  });
+});
