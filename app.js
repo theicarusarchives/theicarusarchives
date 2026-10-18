@@ -170,8 +170,33 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("mousemove", (e) => {
     if (!houseCursor) return;
+
     houseCursor.style.left = e.clientX + "px";
     houseCursor.style.top = e.clientY + "px";
+
+    const sparkle = document.createElement("span");
+    sparkle.textContent = Math.random() > 0.5 ? "✦" : "✧";
+
+    Object.assign(sparkle.style, {
+      position: "fixed",
+      left: e.clientX + (Math.random() * 16 - 8) + "px",
+      top: e.clientY + (Math.random() * 16 - 8) + "px",
+      color: Math.random() > 0.5 ? "#ffd36b" : "#fff1bd",
+      fontSize: (Math.random() * 10 + 8) + "px",
+      pointerEvents: "none",
+      zIndex: "9998",
+      textShadow: "0 0 8px #ffbd55",
+      transition: "opacity 0.7s ease, transform 0.7s ease"
+    });
+
+    document.body.appendChild(sparkle);
+
+    requestAnimationFrame(() => {
+      sparkle.style.opacity = "0";
+      sparkle.style.transform = "translateY(-14px) scale(0.4)";
+    });
+
+    setTimeout(() => sparkle.remove(), 750);
   });
 });
 
