@@ -665,3 +665,50 @@ body::after {
   content: "🏠";
 }
 
+
+/* CENTRED MESSAGE BOX */
+.message-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 20px auto;
+  gap: 10px;
+}
+
+#visitor-message {
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 90%;
+  min-height: 70px;
+  padding: 10px;
+  resize: vertical;
+  text-align: left;
+}
+
+#send-message {
+  display: block;
+  margin: 0 auto;
+}
+
+#message-status {
+  text-align: center;
+  margin: 0;
+}
+
+
+/* KEEP CURSOR ABOVE THE WHOLE PAGE */
+.cursor-trail {
+  position: fixed !important;
+  z-index: 99999 !important;
+  pointer-events: none !important;
+}
+
+.cursor-trail::before {
+  position: relative;
+  z-index: 99999;
+}
+
+#starfield {
+  pointer-events: none !important;
+}
