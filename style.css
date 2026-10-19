@@ -758,3 +758,29 @@ body::after {
   border: 0;
   border-radius: 6px;
 }
+
+.bandcamp-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  color: #874b3c;
+  background: #ffe0c9;
+  border: 1px solid #f39b7b;
+  border-radius: 7px;
+  text-decoration: none;
+  vertical-align: middle;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.bandcamp-link svg {
+  display: block;
+  width: 15px;
+  height: 15px;
+}
+
+.bandcamp-link:hover {
+  background: #ffbfaa;
+  transform: translateY(-2px);
+}
