@@ -784,3 +784,8 @@ body::after {
   background: #ffbfaa;
   transform: translateY(-2px);
 }
+
+.bandcamp-link {
+  display: flex;
+  margin: 8px auto 0;
+}
