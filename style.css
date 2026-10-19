@@ -712,3 +712,98 @@ body::after {
 #starfield {
   pointer-events: none !important;
 }
+
+/* HTTPFOXY RETRO MINI PLAYER */
+.foxy-player {
+  box-sizing: border-box;
+  width: 270px;
+  max-width: 90%;
+  margin: 22px auto;
+  padding: 14px;
+  background: linear-gradient(145deg, #ffe0c9, #ffbfaa);
+  border: 2px solid #f39b7b;
+  border-radius: 12px;
+  color: #874b3c;
+  font-family: 'Courier New', monospace;
+  text-align: left;
+  box-shadow: 4px 5px 0 rgba(190, 104, 75, 0.18);
+}
+
+.foxy-player-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.foxy-player-label {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.foxy-player-light {
+  width: 7px;
+  height: 7px;
+  background: #ed765f;
+  border-radius: 50%;
+  box-shadow: 0 0 7px #ed765f;
+  animation: foxyBlink 1.5s infinite alternate;
+}
+
+.foxy-player-track {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 5px;
+}
+
+.foxy-player-artist {
+  font-size: 10px;
+  opacity: 0.8;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.foxy-player-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 10px 8px;
+  background: #fff0e4;
+  border: 1px solid #e99c80;
+  border-radius: 6px;
+  color: #874b3c;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.foxy-player-button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.foxy-play-icon {
+  font-size: 13px;
+}
+
+.foxy-player-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 8px;
+  border-top: 1px dashed #e99c80;
+  font-size: 8px;
+  letter-spacing: 0.5px;
+}
+
+@keyframes foxyBlink {
+  from { opacity: 0.45; }
+  to { opacity: 1; }
+}
+
